@@ -1,17 +1,64 @@
 <!-- HTML = “what exists” (text, buttons) -->
 <!DOCTYPE html> <!-- Tells the browser this is an HTML5 document -->
 <html> <!-- Root element of the webpage -->
-<head>
-    <title>My Website</title> <!-- The title shown on the browser tab -->
+     <title>My Website</title> <!-- The title shown on the browser tab -->
+<head> <!--container for metadata—data about the document that is not displayed directly on the page-->
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> <!-- Makes the page responsive on mobile devices -->
+    <style>
+        * {
+            box-sizing: border-box; /* Makes width and height include padding and border */
+        }
+
+        ul.topnav {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        ul.topnav li a {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        ul.topnav li a:hover {
+            background-color: #FFC9D7;
+        }
+       
+        header{
+            padding: 10px;
+
+        }
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        
+    </style>
     <link rel="stylesheet" href="style.css"> <!-- Links your CSS file to style the page -->
 </head>
 
 <body> <!-- Everything inside here shows up on the webpage -->
-    <h1>Hi, I'm Sophia </h1> <!-- Main heading (big text) -->
+
+    <ul class="topnav">
+        <li><a href="#">⋆. 𐙚˚❀⋆ sophia sem ⋆. ࿔ ˚</a></li>
+        <li><a href="#">home</a></li>
+        <li><a href="#">projects</a></li>
+        <li><a href="#">contact!</a></li>
+    </ul>
+    
     <p>this site is currently under construction</p>
+   
 
     <button onclick="sayHello()">Click me</button> <!-- Button that runs a function when clicked -->
 
     <script src="script.js"></script> <!-- Links your JavaScript file -->
 </body>
 </html>
+
+
+
+<!--width=device-width: Sets the width of the page to follow the screen-width of the device (which will vary depending on the device).-->
+<!--initial-scale=1.0: Sets the initial zoom level when the page is first loade-->
