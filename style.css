@@ -1,31 +1,151 @@
-/*CSS = “what it looks like” (colors, spacing) */
+/* what it looks like */
 
 body {
-    font-family: Montserrat, Menlo, monospace; /* Changes the font of the whole page */
-    text-align: center; /* Centers all text */
-    background-color: #252526; /* dark gray background color */
-    transition: all 0.3s ease; /* Smooth transition for theme changes */
-    
-}
-ul.topnav li:first-child {
-    margin-right: auto;
+font-family: Montserrat, Menlo, monospace; /* font of the whole page */
+text-align: left; /* center text */
+background-color: #252526;
+transition: all 0.3s ease;
 }
 
+.glow-text {
+color: #fff;
+transition: 0.6s; /* glow fade */
+cursor: pointer;
+}
+
+.glow-text:hover {
+text-shadow:
+0 0 10px #fbbce3,
+0 0 20px #fbbce3,
+0 0 30px #fbbce3;
+}
 
 button {
-    padding: 10px 20px;  /* Adds space inside the button (top/bottom, left/right) */
-    background-color: #E37598; /* Button color */
-    border: none; /* Removes default border */
-    border-radius: 5px; /* Rounds the corners */
-    cursor: pointer; /* Changes mouse to pointer when hovering */
+background: none;
+border: none; /* rem border */
+cursor: pointer; /* changes mouse to pointer when hovering */
 }
 
 .wrapper {
-            padding: 0 15px; /* Adds horizontal padding */
-            max-width: 960px; /* Limits the maximum width of the content */
-            margin: 0 auto; /* Centers the content */
-        }
-        .content {
-            padding: 20px;
-            width: 100%;
-        }
+padding: 0 15px;
+max-width: 960px;
+margin: 0 auto; /* center */
+}
+.content {
+padding: 20px;
+width: 100%;
+}
+
+/* animation keyframes */
+@keyframes floatIn {
+from {
+opacity: 0;
+transform: translateX(-100px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+
+/* apply the animation to elements */
+.fade-in-left {
+opacity: 0; /* keep it hidden before the animation starts */
+animation: floatIn 1.2s ease-out forwards;
+}
+
+/* basic styling to center everything */
+.hero-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+font-family: Montserrat, Menlo, monospace;
+font-size: 2rem;
+}
+
+/* button animation */
+@keyframes fadeInUp {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+margin-top: 10px;
+padding: 12px 24px;
+color: #fff;
+border: none;
+cursor: pointer;
+font-size: 1.5rem;
+font-family: Montserrat, Menlo, monospace;
+opacity: 0;
+animation: fadeInUp 1s ease-out forwards;
+animation-delay: 1s;
+}
+
+/* full menu overlay */
+.menu-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(227, 172, 192, 0.95); /* background */
+display: flex;
+justify-content: center;
+align-items: center;
+visibility: hidden;
+opacity: 0;
+transition: all 0.4s ease;
+z-index: 10;
+}
+
+/* show menu */
+.menu-overlay.active {
+visibility: visible;
+opacity: 1;
+}
+
+.menu-overlay nav li a {
+display: block;
+color: white;
+font-size: 2rem;
+text-decoration: none;
+margin: 20px;
+text-align: center;
+
+}
+
+.menu-overlay nav ul {
+    list-style-type: none; /* removes the bullets */
+    padding: 0;
+    margin: 0;
+}
+
+.close-x {
+position: absolute;
+top: 20px;
+right: 30px;
+background: none;
+border: none;
+color: white;
+font-size: 3rem;
+cursor: pointer;
+}
+
+.explore-link {
+    background: none;       /* rem button background */
+    border: none;           /* rem button border */
+    color: whitesmoke;      
+    font-size: 1.5rem;    
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+#exploreButton:hover {
+    text-shadow:
+    0 0 10px #fbbce3,
+    0 0 20px #fbbce3,
+    0 0 30px #fbbce3;
+}
